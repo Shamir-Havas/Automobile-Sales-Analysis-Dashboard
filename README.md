@@ -1,79 +1,164 @@
-Automobile Sales Analysis & Dashboard
+# 🚗 Automobile Sales Analysis Dashboard
 
-This project analyzes synthetic automobile sales data using Python (Pandas, Matplotlib, Seaborn) and builds an interactive dashboard with Plotly Dash.
-It fulfills academic grading requirements by implementing specific tasks such as line plots, bar charts, pie charts, bubble plots, scatter plots, and dashboard interactivity.
+![Dashboard Preview](screenshots/dashboard.png)  
+*A snapshot of the interactive dashboard.*
 
---------------------------------------------------------------------------------
-Project Structure
+---
 
-Automobile_Sales_Project/
-│── data/
-│   └── automobile_sales.csv     # Synthetic dataset
-│
-│── images/                      # Saved plots for grading
-│   ├── Line_plot_1.png
-│   ├── Line_plot_2.png
-│   ├── Bar_Chart.png
-│   ├── Subplot.png
-│   ├── Bubble.png
-│   ├── Scatter.png
-│   ├── Pie_1.png
-│   ├── Pie_2.png
-│   └── Line_plot_3.png
-│
-│── app.py                       # Dash Dashboard code
-│── analysis.py                   # Data analysis and visualization code
-│── README.txt                    # Project documentation
+## 📌 Project Overview
+This project analyzes **automobile sales trends** using both static visualizations and an **interactive dashboard**.  
+The goal is to highlight how **recessions, unemployment, GDP, and advertising** influence automobile sales across different vehicle types.
 
---------------------------------------------------------------------------------
-Setup Instructions
+This project demonstrates:
+- **Data Wrangling & Preprocessing**
+- **Exploratory Data Analysis (EDA)**
+- **Visualization (Matplotlib, Seaborn, Plotly)**
+- **Dashboard Development (Dash, ipywidgets)**
+- **Business Insights & Storytelling**
 
-1. Clone Repository
-    git clone https://github.com/yourusername/automobile-sales-analysis.git
-    cd automobile-sales-analysis
+---
 
-2. Create Virtual Environment
-    python -m venv venv
-    venv\Scripts\activate   (Windows)
-    source venv/bin/activate  (Mac/Linux)
+## 📊 Dataset
+Since no public dataset was provided, a **synthetic dataset** was generated with realistic automotive sales and economic indicators.
 
-3. Install Dependencies
-    pip install -r requirements.txt
+**Key Features:**
+- `Date`, `Year`, `Month` → Time period of sales  
+- `Automobile_Sales` → Sales volume  
+- `Vehicle_Type` → Vehicle categories (Sports, Executive, etc.)  
+- `Recession` → Whether the year was in recession  
+- `GDP`, `Unemployment_Rate`, `Consumer_Confidence` → Economic indicators  
+- `Price`, `Advertising_Expenditure`, `Competition` → Market/business factors  
+- `Seasonality_Weight` → Seasonal effects  
 
-4. Run Analysis Scripts
-    python analysis.py
+---
 
-5. Launch Dashboard
-    python app.py
+## 🔎 Exploratory Data Analysis (EDA)
 
-    Dashboard will run at: http://127.0.0.1:8050/
+### 1. Automobile Sales Over Years  
+Shows long-term trend in automobile sales.  
+![Sales Over Years](screenshots/line_sales.png)
 
---------------------------------------------------------------------------------
-Key Features
-✔ Synthetic dataset for automobile sales
-✔ Line plots, bar charts, scatter, bubble & pie charts
-✔ Subplots comparing recession vs non-recession GDP
-✔ Interactive Dash dashboard with dropdowns & callbacks
-✔ Professional code structure for reproducibility
+### 2. Recession vs Non-Recession Sales  
+Highlights how recessions affect total sales.  
+![Recession vs Non-Recession](screenshots/recession_bar.png)
 
---------------------------------------------------------------------------------
-Grading Criteria Coverage
-- Task 1.1 → Line plot of yearly sales
-- Task 1.2 → Line plot by vehicle type during recessions
-- Task 1.3 → Seaborn bar chart recession vs non-recession
-- Task 1.4 → Subplots for GDP trends
-- Task 1.5 → Bubble plot for seasonality
-- Task 1.6 → Scatter plot sales vs price
-- Task 1.7 → Pie chart (advertising expenditure)
-- Task 1.8 → Pie chart (vehicle type advertisement split)
-- Task 1.9 → Line plot (unemployment vs sales)
-- Task 2.1 → Dash app title
-- Task 2.2 → Dropdowns
-- Task 2.3 → Output div
-- Task 2.4 → Callbacks
-- Task 2.5 → Recession report graphs
-- Task 2.6 → Yearly report graphs
+### 3. Effect of Unemployment on Sales  
+Unemployment rate strongly influences sales in recession periods.  
+![Unemployment Effect](screenshots/unemployment_line.png)
 
---------------------------------------------------------------------------------
-Author
-Shamir Havas
+### 4. Advertising Expenditure Distribution  
+Comparison of ad spending between recession and non-recession years.  
+![Advertising Pie](screenshots/ad_expenditure_pie.png)
+
+---
+
+## 📈 Interactive Dashboard
+An interactive dashboard was built using **Dash + Plotly + ipywidgets**.
+
+- **Recession Report:**  
+  - Line chart: Sales per vehicle type  
+  - Bar chart: Sales by vehicle type  
+  - Scatter: Unemployment vs Sales  
+  - Pie: Sales distribution  
+
+- **Yearly Report:**  
+  - Line chart: Total sales trend  
+  - Bar chart: Vehicle sales in selected year  
+  - Scatter: Price vs Sales  
+  - Pie: Sales distribution  
+
+📌 **Dashboard Preview:**  
+![Dashboard Screenshot](screenshots/dashboard.png)
+
+---
+
+## 💡 Key Insights & Business Value
+- Sales show **clear declines during recessions**.  
+- **SUVs and sports cars** show unique patterns compared to smaller cars.  
+- **Unemployment rates** strongly correlate with automobile sales in downturns.  
+- Advertising expenditure shifts noticeably **between recession vs non-recession years**.  
+
+These insights can support **business strategy, marketing optimization, and product planning**.
+
+---
+
+## ⚙️ How to Run
+
+### Prerequisites
+Install required libraries:
+```bash
+pip install pandas numpy matplotlib seaborn plotly dash ipywidgets
+Run Notebook
+Open the Jupyter notebook:
+
+bash
+Copy code
+jupyter notebook automobile_sales_cleaned.ipynb
+Run Dashboard
+To launch the dashboard locally:
+
+bash
+Copy code
+python app.py
+(If dashboard code is inside notebook, run the relevant cell.)
+
+🛠️ Tech Stack
+Python (Pandas, NumPy) – data wrangling & preprocessing
+
+Matplotlib & Seaborn – static visualizations
+
+Plotly Express & Dash – interactive dashboard
+
+ipywidgets – dropdown filters and interactivity
+
+✅ Skills Demonstrated
+Data Wrangling & Feature Engineering
+
+Exploratory Data Analysis (EDA)
+
+Data Visualization (static + interactive)
+
+Dashboard Development
+
+Business Analytics & Storytelling
+
+📂 Repository Structure
+bash
+Copy code
+Automobile-Sales-Analysis-Dashboard/
+│── automobile_sales_cleaned.ipynb   # Cleaned notebook with markups
+│── app.py                           # Dashboard app (if separate)
+│── screenshots/                     # Store all screenshots here
+│── README.md                        # Project documentation
+📌 Next Steps
+Replace synthetic dataset with real-world automobile sales data.
+
+Add forecasting models for predictive insights.
+
+Deploy dashboard to Heroku/Streamlit Cloud for public use.
+
+yaml
+Copy code
+
+---
+
+👉 Your action items:  
+- Create a folder named `screenshots/` in your repo.  
+- Add the following screenshots there:  
+  - `line_sales.png` → Sales Over Years  
+  - `recession_bar.png` → Recession vs Non-Recession Sales  
+  - `unemployment_line.png` → Effect of Unemployment on Sales  
+  - `ad_expenditure_pie.png` → Advertising Distribution  
+  - `dashboard.png` → Interactive Dashboard  
+
+---
+
+⚡ Do you want me to also **extract those plots directly from your notebook and generate the screenshot images** for you now, so you don’t have to do it manually?
+
+
+
+
+
+
+
+Ask ChatGPT

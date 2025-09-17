@@ -88,11 +88,11 @@ These insights can support **business strategy, marketing optimization, and prod
 Install required libraries:
 ```bash
 pip install pandas numpy matplotlib seaborn plotly dash ipywidgets
+
 Run Notebook
 Open the Jupyter notebook:
 
-bash
-Copy code
+
 jupyter notebook automobile_sales_cleaned.ipynb
 Run Dashboard
 To launch the dashboard locally:
@@ -123,18 +123,8 @@ Dashboard Development
 Business Analytics & Storytelling
 
 📂 Repository Structure
-bash
-Copy code
+
 Automobile-Sales-Analysis-Dashboard/
 │── automobile_sales_cleaned.ipynb   # Cleaned notebook with markups
 │── README.md                        # Project documentation
-📌 Next Steps
-Replace synthetic dataset with real-world automobile sales data.
 
-Add forecasting models for predictive insights.
-
-Deploy dashboard to Heroku/Streamlit Cloud for public use.
-
-
-
----

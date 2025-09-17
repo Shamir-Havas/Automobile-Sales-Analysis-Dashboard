@@ -1,6 +1,6 @@
 # 🚗 Automobile Sales Analysis Dashboard
 
-![Dashboard Preview](screenshots/dashboard.png)  
+![Dashboard Preview](https://github.com/Shamir-Havas/Automobile-Sales-Analysis-Dashboard/blob/main/dash1.png)  
 *A snapshot of the interactive dashboard.*
 
 ---

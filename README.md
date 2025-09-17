@@ -127,8 +127,6 @@ bash
 Copy code
 Automobile-Sales-Analysis-Dashboard/
 │── automobile_sales_cleaned.ipynb   # Cleaned notebook with markups
-│── app.py                           # Dashboard app (if separate)
-│── screenshots/                     # Store all screenshots here
 │── README.md                        # Project documentation
 📌 Next Steps
 Replace synthetic dataset with real-world automobile sales data.
@@ -137,28 +135,6 @@ Add forecasting models for predictive insights.
 
 Deploy dashboard to Heroku/Streamlit Cloud for public use.
 
-yaml
-Copy code
+
 
 ---
-
-👉 Your action items:  
-- Create a folder named `screenshots/` in your repo.  
-- Add the following screenshots there:  
-  - `line_sales.png` → Sales Over Years  
-  - `recession_bar.png` → Recession vs Non-Recession Sales  
-  - `unemployment_line.png` → Effect of Unemployment on Sales  
-  - `ad_expenditure_pie.png` → Advertising Distribution  
-  - `dashboard.png` → Interactive Dashboard  
-
----
-
-⚡ Do you want me to also **extract those plots directly from your notebook and generate the screenshot images** for you now, so you don’t have to do it manually?
-
-
-
-
-
-
-
-Ask ChatGPT

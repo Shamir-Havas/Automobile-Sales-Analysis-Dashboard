@@ -36,19 +36,20 @@ Since no public dataset was provided, a **synthetic dataset** was generated with
 
 ### 1. Automobile Sales Over Years  
 Shows long-term trend in automobile sales.  
-![Sales Over Years](screenshots/line_sales.png)
+![Sales Over Years](https://github.com/Shamir-Havas/Automobile-Sales-Analysis-Dashboard/blob/main/Sales%20over%20years.png)
 
 ### 2. Recession vs Non-Recession Sales  
 Highlights how recessions affect total sales.  
-![Recession vs Non-Recession](screenshots/recession_bar.png)
+![Recession vs Non-Recession](https://github.com/Shamir-Havas/Automobile-Sales-Analysis-Dashboard/blob/main/recession%20vs%20non%20recession.png)
 
 ### 3. Effect of Unemployment on Sales  
 Unemployment rate strongly influences sales in recession periods.  
-![Unemployment Effect](screenshots/unemployment_line.png)
+![Unemployment Effect](https://github.com/Shamir-Havas/Automobile-Sales-Analysis-Dashboard/blob/main/unemplyment%20effect.png)
 
 ### 4. Advertising Expenditure Distribution  
 Comparison of ad spending between recession and non-recession years.  
-![Advertising Pie](screenshots/ad_expenditure_pie.png)
+![recession year](https://github.com/Shamir-Havas/Automobile-Sales-Analysis-Dashboard/blob/main/pie2.png)
+![non-recession year](https://github.com/Shamir-Havas/Automobile-Sales-Analysis-Dashboard/blob/main/pie1.png)
 
 ---
 

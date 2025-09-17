@@ -69,7 +69,8 @@ An interactive dashboard was built using **Dash + Plotly + ipywidgets**.
   - Pie: Sales distribution  
 
 📌 **Dashboard Preview:**  
-![Dashboard Screenshot](screenshots/dashboard.png)
+![Dashboard Screenshot 1](https://github.com/Shamir-Havas/Automobile-Sales-Analysis-Dashboard/blob/main/dash1.png)
+![Dashboard Screenshot 2](https://github.com/Shamir-Havas/Automobile-Sales-Analysis-Dashboard/blob/main/dash2.png)
 
 ---
 

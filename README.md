@@ -1,80 +1,80 @@
 # 🚗 Automobile Sales Analysis & Interactive Dashboard
 
-> An end-to-end Python analytics project exploring automobile sales patterns across economic conditions, vehicle segments, pricing, advertising expenditure, unemployment, and seasonality — presented through analytical visualizations and an interactive Dash dashboard.
+An end-to-end **Data Science and Business Analytics project** focused on analyzing automobile sales trends, recession impacts, advertising expenditure, vehicle-type performance, pricing, seasonality, and unemployment.
+
+The project combines **Python-based exploratory data analysis (EDA)** with an **interactive Plotly Dash dashboard** to transform automobile sales data into business-oriented insights.
 
 ---
 
 ## 📌 Project Overview
 
-Understanding how economic conditions affect automobile demand can help automotive businesses make better decisions around pricing, marketing, inventory, and product strategy.
+The automobile industry is strongly influenced by economic conditions, consumer behavior, pricing, advertising, and seasonality.
 
-This project analyzes automobile sales across different vehicle types and explores how sales vary with:
+This project analyzes automobile sales data from **2000 to 2019** to understand:
 
-- Economic conditions and recession periods
-- Unemployment rates
-- GDP
-- Average vehicle price
-- Advertising expenditure
-- Seasonal patterns
-- Vehicle type
+- How automobile sales change over time
+- How recessions affect automobile sales
+- Which vehicle categories perform best
+- How advertising expenditure changes during economic downturns
+- The relationship between automobile prices and sales
+- Seasonal patterns in automobile sales
+- The relationship between unemployment and automobile sales
 
-The project combines **data generation, exploratory data analysis, statistical aggregation, visualization, and interactive dashboard development** into a single analytical workflow.
-
-> **Note:** This project uses a synthetically generated dataset. The findings are therefore intended to demonstrate analytical methodology rather than represent real-world automotive market estimates.
+An interactive **Dash dashboard** was also developed to allow users to explore the analysis through different reports and years.
 
 ---
 
 ## 🎯 Business Objectives
 
-The analysis was designed to answer the following business questions:
+The main objectives of this project are to:
 
-1. How do automobile sales change over time?
-2. How do sales differ between recession and non-recession periods?
-3. Which vehicle types generate the highest sales?
-4. How does vehicle price relate to sales during recession periods?
-5. How is advertising expenditure distributed across vehicle segments?
-6. Are there visible seasonal patterns in automobile demand?
-7. How do unemployment levels vary with vehicle sales during recession periods?
+1. Analyze long-term automobile sales trends.
+2. Compare automobile sales during recession and non-recession periods.
+3. Identify vehicle types with stronger and weaker sales performance.
+4. Examine advertising expenditure across vehicle categories.
+5. Investigate seasonal patterns in automobile sales.
+6. Explore the relationship between automobile prices and sales.
+7. Examine the relationship between unemployment rates and automobile sales.
+8. Build an interactive dashboard for business-oriented analysis.
 
 ---
 
 # 📊 Dataset
 
-The project uses a **synthetically generated automobile sales dataset**.
+The dataset used in this project is generated programmatically using **NumPy and Pandas** with a fixed random seed for reproducibility.
 
-The notebook generates monthly observations covering **2000–2019** across five vehicle categories. A fixed random seed is used to support reproducibility.
+### Dataset characteristics
 
-### Dataset Characteristics
+- **Time period:** 2000–2019
+- **Observations:** 1,200
+- **Features:** 9
+- **Vehicle types:** 5
 
-- **20 years**
-- **12 months per year**
-- **5 vehicle types**
-- **1,200 observations**
-- **9 analytical variables**
+### Vehicle categories
+
+- Superminicar
+- Smallfamilycar
+- Mediumfamilycar
+- Executivecar
+- Sports
 
 ### Features
 
 | Feature | Description |
 |---|---|
-| `Year` | Calendar year |
+| `Year` | Year of observation |
 | `Month` | Month of observation |
-| `Vehicle_Type` | Automobile segment |
-| `Automobile_Sales` | Number of automobiles sold |
+| `Vehicle_Type` | Automobile category |
+| `Automobile_Sales` | Automobile sales |
 | `Advertising_Expenditure` | Advertising expenditure |
-| `GDP` | GDP indicator |
+| `GDP` | Gross Domestic Product |
 | `Unemployment_Rate` | Unemployment rate |
-| `Recession` | Recession indicator |
-| `Average_Price` | Average vehicle price |
+| `Recession` | Indicates whether the observation belongs to a recession period |
+| `Average_Price` | Average automobile price |
 
-### Vehicle Segments
+The recession years represented in the analysis are:
 
-- Smallfamilycar
-- Executivecar
-- Superminicar
-- Sports
-- Mediumfamilycar
-
-The data-generation process incorporates vehicle-specific demand, seasonal effects, advertising expenditure, pricing, recession effects, GDP variation, and unemployment variation.
+**2001, 2008, 2009, 2012, and 2015**
 
 ---
 
@@ -82,289 +82,197 @@ The data-generation process incorporates vehicle-specific demand, seasonal effec
 
 ## 1. Automobile Sales Over Time
 
-Yearly automobile sales are aggregated and visualized to identify long-term demand patterns.
+The analysis examines automobile sales across the full observation period to identify overall trends, fluctuations, and changes in demand.
 
-![Automobile Sales Over Years](Sales%20over%20years.png)
+The time-series analysis provides a high-level view of how sales evolve across different economic periods.
 
-### Key Observation
-
-Sales fluctuate substantially over the observation period, with visible peaks and downturns rather than a simple linear growth pattern.
+![Automobile Sales Over Years](images/sales_over_years.png)
 
 ---
 
 ## 2. Recession vs Non-Recession Sales
 
-Automobile sales are aggregated by recession status and vehicle type to compare demand under different economic conditions.
+One of the main objectives of the project is to understand how economic downturns influence automobile sales.
 
-![Recession vs Non-Recession Sales](recession%20vs%20non%20recession.png)
+The analysis compares average annual sales during recession and non-recession periods.
 
-### Key Finding
+### Key finding
 
-Within the generated dataset, average annual automobile sales are lower during recession periods than during non-recession periods.
+- **Average annual sales during recession:** 20,591.6
+- **Average annual sales during non-recession:** 25,167.5
 
-| Period | Average Annual Sales |
+This represents approximately an **18.2% lower average annual sales level during recession periods**.
+
+This demonstrates the potential impact of adverse economic conditions on automobile demand.
+
+![Recession vs Non-Recession](images/recession_vs_non_recession.png)
+
+> Note: The analysis is observational and does not establish a causal relationship between recession conditions and sales.
+
+---
+
+## 3. Sales Performance by Vehicle Type
+
+The project analyzes sales performance across different automobile categories to identify which vehicle segments contribute most to overall sales.
+
+During recession periods, the cumulative sales by vehicle type were:
+
+| Vehicle Type | Recession Sales |
 |---|---:|
-| Non-Recession | 25,167.5 |
-| Recession | 20,591.6 |
+| Mediumfamilycar | 27,588 |
+| Smallfamilycar | 27,234 |
+| Superminicar | 22,756 |
+| Executivecar | 15,125 |
+| Sports | 10,255 |
 
-This represents an approximately **18.2% lower average annual sales level during recession periods** in the synthetic dataset.
+### Business interpretation
 
----
+The results show that **Mediumfamilycar** and **Smallfamilycar** represent the strongest-performing vehicle categories during recession periods, while **Sports** vehicles have substantially lower sales.
 
-## 3. Sales by Vehicle Type
-
-Vehicle-level aggregation is used to identify differences in demand across automobile segments.
-
-### Recession-Period Sales
-
-| Rank | Vehicle Type | Sales |
-|---:|---|---:|
-| 1 | Mediumfamilycar | 27,588 |
-| 2 | Smallfamilycar | 27,234 |
-| 3 | Superminicar | 22,756 |
-| 4 | Executivecar | 15,125 |
-| 5 | Sports | 10,255 |
-
-The results show stronger sales volumes for the family-oriented vehicle categories within the recession sample.
+This can help businesses understand how different vehicle segments behave under challenging economic conditions.
 
 ---
 
-## 4. Price vs Sales During Recession
+## 4. Seasonality Analysis
 
-The project examines the relationship between average vehicle price and automobile sales during recession periods.
+Automobile sales can vary depending on the month of the year.
 
-![Price vs Sales](Scatter.png)
+The analysis investigates monthly sales patterns and identifies seasonal changes in automobile demand.
 
-### Analytical Observation
+The generated dataset incorporates seasonal effects, allowing the project to explore how sales vary throughout the year.
 
-Higher-priced vehicle categories generally show lower sales volumes in the recession sample.
-
-Because vehicle price is also associated with vehicle segment, this relationship should be interpreted as **descriptive rather than causal**.
+![Seasonality Analysis](images/seasonality_analysis.png)
 
 ---
 
-## 5. Seasonality Analysis
+## 5. Advertising Expenditure
 
-Monthly automobile sales are aggregated across years to identify recurring seasonal patterns.
+Advertising expenditure is analyzed alongside automobile sales to understand how marketing investment changes across different periods.
 
-![Seasonality Analysis](Bubble.png)
+The analysis also compares advertising expenditure across vehicle types.
 
-The synthetic data incorporates seasonal demand variation, with higher sales multipliers during June–August and moderately higher values during November–December.
-
-This demonstrates how seasonality can be incorporated into automobile demand analysis and visualized for business decision-making.
+![Advertising Expenditure](images/advertising_expenditure.png)
 
 ---
 
-## 6. Advertising Expenditure
+## 6. Advertising Expenditure by Vehicle Type
 
-Advertising expenditure is analyzed across economic conditions and vehicle types.
+The dashboard and EDA examine advertising expenditure across automobile categories.
 
-### Advertising Expenditure: Recession vs Non-Recession
+This provides a business-oriented view of how marketing resources are distributed among different vehicle segments.
 
-![Advertising Expenditure](Pie_1.png)
-
-### Advertising Expenditure by Vehicle Type During Recession
-
-![Advertising by Vehicle Type](Pie_2.png)
-
-The analysis demonstrates how marketing expenditure can be compared across vehicle segments and economic conditions.
+![Advertising by Vehicle Type](images/advertising_by_vehicle_type.png)
 
 ---
 
-## 7. Unemployment vs Automobile Sales
+## 7. Unemployment Rate and Automobile Sales
 
-The project examines unemployment rates against automobile sales during recession periods.
+The project also explores the relationship between unemployment and automobile sales.
 
-![Unemployment vs Automobile Sales](unemplyment%20effect.png)
+The objective is to determine whether changes in unemployment coincide with changes in automobile demand.
 
-### Analytical Observation
+![Unemployment vs Automobile Sales](images/unemployment_vs_sales.png)
 
-The visualization is used to explore the relationship between unemployment and vehicle sales during recession periods.
-
-It should not be interpreted as evidence that unemployment directly causes changes in automobile sales.
+> The relationship should be interpreted as exploratory rather than causal.
 
 ---
 
 # 📈 Interactive Dashboard
 
-The project includes an interactive dashboard developed using **Dash and Plotly**.
+A major component of this project is an interactive dashboard built using:
 
-The dashboard provides two analytical report types:
+- **Plotly**
+- **Dash**
+- **Dash HTML components**
+- **Dash Core Components**
 
-### 🔴 Recession Report
+The dashboard is titled:
 
-The recession view displays:
+> **Automobile Sales Statistics Dashboard**
 
-- Sales trend across recession years
-- Sales by vehicle type
+Users can interact with the dashboard using report and year selections.
+
+![Dashboard](images/dashboard_1.png)
+
+---
+
+# 📊 Dashboard Reports
+
+## Recession Report
+
+The Recession Report provides a focused analysis of automobile sales during recession periods.
+
+It includes visualizations for:
+
+- Yearly automobile sales during recession periods
+- Automobile sales by vehicle type
 - Advertising expenditure by vehicle type
-- Price vs sales
+- Automobile price and sales analysis
 
-### 🔵 Yearly Sales Report
+This allows users to examine how automobile businesses perform during economically challenging periods.
 
-The yearly view allows the user to select a year and dynamically displays:
+![Recession Dashboard](images/dashboard_2.png)
 
-- Monthly sales by vehicle type
-- Sales by vehicle type
+---
+
+## Yearly Sales Statistics Report
+
+The Yearly Sales Statistics report allows users to examine automobile sales for selected years.
+
+The report includes:
+
+- Monthly automobile sales by vehicle type
+- Sales distribution by vehicle type
 - Advertising expenditure by vehicle type
-- Price vs sales
+- Price and sales analysis
 
-The dashboard uses **Dash callbacks** to control the year selector and dynamically update visualizations based on the selected report type.
+The interactive interface makes it easier to compare different years and vehicle categories.
 
-![Automobile Sales Dashboard](dash1.png)
+---
 
-![Automobile Sales Dashboard](dash2.png)
+# 🧠 Key Business Insights
+
+Based on the analysis, several important observations emerge:
+
+### 1. Automobile sales decline during recession periods
+
+Average annual automobile sales were lower during recession periods compared with non-recession periods.
+
+The difference was approximately **18.2%** based on the generated dataset.
+
+### 2. Vehicle categories behave differently
+
+Medium-family and small-family vehicles demonstrate stronger sales performance during recession periods than executive and sports vehicles.
+
+### 3. Economic conditions matter
+
+Variables such as GDP and unemployment are included to explore how broader economic conditions relate to automobile sales.
+
+### 4. Seasonality influences sales
+
+The analysis incorporates monthly patterns and investigates how automobile demand changes throughout the year.
+
+### 5. Marketing expenditure can be analyzed alongside sales
+
+Advertising expenditure is evaluated across periods and vehicle categories, providing a business perspective on marketing activity.
 
 ---
 
 # 🛠️ Technical Approach
 
-## 1. Synthetic Data Generation
+The project follows a typical data analytics workflow:
 
-The dataset is generated programmatically using **NumPy and Pandas**.
-
-The generation process incorporates:
-
-- Vehicle-specific baseline demand
-- Seasonal multipliers
-- Advertising expenditure
-- Vehicle pricing
-- Recession effects
-- GDP variation
-- Unemployment variation
-
-A fixed random seed is used to support reproducibility.
-
----
-
-## 2. Data Aggregation
-
-Pandas `groupby()` operations are used to transform the raw observations into analytical datasets for:
-
-- Yearly sales
-- Monthly sales
-- Vehicle-level sales
-- Recession vs non-recession comparisons
-- Advertising expenditure
-- Economic indicators
-
----
-
-## 3. Exploratory Data Analysis
-
-The analysis focuses on:
-
-- Sales trends
-- Vehicle-segment differences
-- Economic-period differences
-- Seasonal patterns
-- Price-sales relationships
-- Advertising allocation
-- Unemployment and sales relationships
-
----
-
-## 4. Data Visualization
-
-### Static Visualization
-
-- Matplotlib
-- Seaborn
-
-### Interactive Visualization
-
-- Plotly Express
-- Dash
-
-The project uses:
-
-- Line charts
-- Bar charts
-- Scatter plots
-- Bubble charts
-- Pie charts
-
-to communicate analytical findings.
-
----
-
-# 💡 Key Business Insights
-
-The analysis of the generated dataset demonstrates several business-relevant patterns.
-
-### 1. Automobile demand varies with economic conditions
-
-Average annual sales are lower during recession periods than during non-recession periods in the synthetic dataset.
-
-### 2. Vehicle segments have different demand levels
-
-Family-oriented vehicle categories show stronger sales volumes than premium and sports-oriented categories in the recession sample.
-
-### 3. Price can be useful for segment-level analysis
-
-Higher-priced vehicle categories tend to have lower sales volumes during recession periods.
-
-### 4. Marketing expenditure differs across segments
-
-Advertising expenditure is distributed across vehicle categories, providing a basis for evaluating marketing allocation.
-
-### 5. Seasonality affects demand patterns
-
-The generated dataset contains recurring monthly patterns that demonstrate how seasonality can be incorporated into automobile sales analysis.
-
----
-
-# 🎯 Skills Demonstrated
-
-## Data Analytics
-
-- Data generation
-- Data wrangling
-- Data aggregation
-- Group-by analysis
-- Descriptive analysis
-- Exploratory Data Analysis
-
-## Data Visualization
-
-- Matplotlib
-- Seaborn
-- Plotly Express
-- Time-series visualization
-- Bar charts
-- Scatter plots
-- Bubble charts
-- Pie charts
-
-## Dashboard Development
-
-- Dash
-- Interactive dropdown controls
-- Callback functions
-- Dynamic visualization updates
-- Multi-report dashboard design
-
-## Business Analysis
-
-- Recession analysis
-- Vehicle segmentation
-- Marketing expenditure analysis
-- Pricing analysis
-- Seasonality analysis
-- Business insight generation
-
----
-
-# 💻 Tech Stack
-
-| Technology | Purpose |
-|---|---|
-| Python | Core development |
-| Pandas | Data manipulation and aggregation |
-| NumPy | Synthetic data generation and numerical operations |
-| Matplotlib | Static visualization |
-| Seaborn | Statistical visualization |
-| Plotly | Interactive charts |
-| Dash | Interactive dashboard |
-
----
+```text
+Data Generation
+       ↓
+Data Preparation
+       ↓
+Exploratory Data Analysis
+       ↓
+Statistical Analysis
+       ↓
+Data Visualization
+       ↓
+Business Insights
+       ↓
+Interactive Dashboard
